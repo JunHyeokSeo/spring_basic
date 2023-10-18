@@ -5,6 +5,7 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,7 +13,8 @@ import java.util.OptionalInt;
 
 //service는 비즈니스 의존적으로 설계
 //@Service : 특수화 된 @Component
-//@Service
+//@Transactional : JPA를 사용하기 위해서는 트랜잭션이 있어야한다.
+@Transactional
 public class MemberService {
 	private final MemberRepository memberRepository;
 
